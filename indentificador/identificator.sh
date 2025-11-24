@@ -47,7 +47,7 @@ if [ -n "$ns" ]; then
     echo -e "\n${YELLOW}Name Server:\n${RESET}$ns"
 fi
 
-nmap -T5 -p 21,22,23,25,53,80,110,143,443,3389 $url >nmap.txt # nmap de los 10 puertos más usados
+nmap --open --top-ports 10 -T5 --min-rate 5000 -n -Pn $url >nmap.txt # nmap de los 10 puertos más usados
 
 echo -e "\n${YELLOW}PORT     STATE    SERVICE${RESET}" # mostrar los puertos abiertos
 grep open nmap.txt
