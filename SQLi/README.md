@@ -8,4 +8,3 @@ python injector.py
 ```
 
 type `help` to show the command list
-```
